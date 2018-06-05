@@ -4,7 +4,7 @@ services:
   grafana:
     image: grafana/grafana
     environment:
-      - GF_INSTALL_PLUGINS=grafana-worldmap-panel
+      - GF_INSTALL_PLUGINS=grafana-worldmap-panel,satellogic-3d-globe-panel
     ports:
       - 3000:3000
   redis:

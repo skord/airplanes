@@ -26,8 +26,8 @@ class CreateFlights < ActiveRecord::Migration[5.2]
       t.integer :alt
       t.integer :galt
       t.decimal :inhg
-      t.decimal :lat
-      t.decimal :long
+      t.decimal :lat, {precision: 10, scale: 6}
+      t.decimal :long, {precision: 10, scale: 6}
       t.datetime :postime
       t.boolean :mlat
       t.integer :tsecs
@@ -51,6 +51,9 @@ class CreateFlights < ActiveRecord::Migration[5.2]
       t.integer :ttrk
       t.boolean :posstale
       t.boolean :sat
+      t.string :geohash
+      t.string :alpha2
+      t.string :alpha3
 
       t.timestamps
     end
