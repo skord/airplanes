@@ -1,6 +1,6 @@
 class CreateFlights < ActiveRecord::Migration[5.2]
   def change
-    create_table :flights do |t|
+    create_table :flights, options: "with system versioning" do |t|
       t.string :icao
       t.datetime :fseen
       t.integer :cmsgs
