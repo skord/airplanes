@@ -80,7 +80,8 @@ CREATE TABLE `flights` (
   `alpha3` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `index_flights_on_icao` (`icao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 WITH SYSTEM VERSIONING;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `schema_migrations`;
