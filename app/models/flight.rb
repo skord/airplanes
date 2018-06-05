@@ -12,7 +12,7 @@ class Flight < ApplicationRecord
   def self.update
     if ac_list.present?
       ac_list.each do |ac|
-        update_one(ac)
+        ::FlightUpdaterWorker.perform_async(ac)
       end
     end
   end
